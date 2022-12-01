@@ -6,7 +6,7 @@ pipeline {
                 echo 'Connecting to Bitrise project'
                 sh 'curl --version'
                 script{
-                    def data = readFile(file:'bitriseCurl/curl.json')
+                    def jsonFile = readFile(file:'bitriseCurl/curl.json')
                 }
         }
     }
