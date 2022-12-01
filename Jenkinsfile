@@ -3,6 +3,8 @@ pipeline {
     agent any
     stages {
         stage('Bitrise executor') {
+            when {
+                branch 'develop'
             steps {
                 echo 'Connecting to Bitrise project'
                 sh 'curl --version'
