@@ -6,8 +6,12 @@ pipeline {
                 echo 'Connecting to Bitrise project'
                 sh 'curl --version'
                 script{
-                    def json = readFile(file:'bitriseCurl/curl.json')
-                    sh "echo ${json}" 
+                    def jsonBitrise = '{"name":"gercel", "age":10}'
+                    def jsonObj = readJson text: jsonString
+
+                    assert jsonObj['name']== 'gercel'
+                    sh "echo ${jsonObj.name}"
+                    sh "echo ${jsonObj.age}" 
                 }
         }
     }
