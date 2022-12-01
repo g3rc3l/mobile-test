@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Connecting to Bitrise project'
                 sh 'curl --version'
-                sh curl --fail -H "Authorization: $tJYY5MWhRIrAmcfP7syzGiTVYNHo65V8ZsupLZkIFOdjRgkKoTQXbL3PNfaMOiRLQqwa6dlX_bYVbckSXHzLjg" "https://app.bitrise.io/app/c6aaf08b56227d8f/build/start.json"
+                sh curl curl -X POST -H "Authorization: tJYY5MWhRIrAmcfP7syzGiTVYNHo65V8ZsupLZkIFOdjRgkKoTQXbL3PNfaMOiRLQqwa6dlX_bYVbckSXHzLjg" "https://api.bitrise.io/v0.1/apps/c6aaf08b56227d8f/builds/BUILD-SLUG" -d 
                 script{
                     def jsonFile = readFile(file:'bitriseCurl/curl.json')
                 }
