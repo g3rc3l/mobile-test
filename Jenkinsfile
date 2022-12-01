@@ -7,7 +7,7 @@ pipeline {
                 sh 'curl --version'
                 script{
                     def jsonFile = readFile(file:'bitriseCurl/curl.json')
-                    sh "echo ${jsonFile} 
+                    sh "echo ${jsonFile}" 
                 }
         }
     }
