@@ -1,8 +1,77 @@
 {
-    "hook_info": {
-      "type": "bitrise"
+    "name": "Trigger a new build/pipeline",
+    "request": {
+        "auth": {
+            "type": "apikey",
+            "apikey": [
+                {
+                    "key": "value",
+                    "value": "tJYY5MWhRIrAmcfP7syzGiTVYNHo65V8ZsupLZkIFOdjRgkKoTQXbL3PNfaMOiRLQqwa6dlX_bYVbckSXHzLjg",
+                    "type": "string"
+                },
+                {
+                    "key": "key",
+                    "value": "Authorization",
+                    "type": "string"
+                },
+                {
+                    "key": "in",
+                    "value": "header",
+                    "type": "string"
+                }
+            ]
+        },
+        "method": "POST",
+        "header": [
+            {
+                "key": "Content-Type",
+                "value": "application/json"
+            },
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "body": {
+            "mode": "raw",
+            "raw": "{\n  \"build_params\":{\n    \"branch\":\"develop\",\n    \"workflow_id\":\"android-test\"\n   }, \n  \"hook_info\":{\n    \"type\":\"bitrise\"\n  }\n  \n}",
+            "options": {
+                "raw": {
+                    "language": "json"
+                }
+            }
+        },
+        "url": {
+            "raw": "{{baseUrl}}/apps/:app-slug/builds",
+            "host": [
+                "{{baseUrl}}"
+            ],
+            "path": [
+                "apps",
+                ":app-slug",
+                "builds"
+            ],
+            "variable": [
+                {
+                    "key": "app-slug",
+                    "value": "c6aaf08b56227d8f",
+                    "description": "(Required) App slug"
+                }
+            ]
+        }
     },
-    "build_params": {
-      "branch": "develop"
-    }
-  }
+    "response": [
+        {
+            "name": "OK",
+            "originalRequest": {
+                "method": "POST",
+                "header": [
+                    {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                    }
+                }
+
+        }
+}
