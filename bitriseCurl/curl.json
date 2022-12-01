@@ -1,10 +1,9 @@
-curl --fail -H "Authorization: $WNZmF9mslpOi2myAVOlUug"
-"https://app.bitrise.io/app/c6aaf08b56227d8f/build/start.json" -d \
-'{
-  "hook_info":{
-    "type":"bitrise"
-  },
-  "build_params":{
-    "branch":"develop"
+$curl https://app.bitrise.io/app/c6aaf08b56227d8f/build/start.json -L --data '{"hook_info":{"type":"bitrise","build_trigger_token":"WNZmF9mslpOi2myAVOlUug"},"build_params":{"branch":"develop"},"triggered_by":"curl"}'
+{
+    "hook_info": {
+      "type": "bitrise"
+    },
+    "build_params": {
+      "branch": "develop"
+    }
   }
-}'
